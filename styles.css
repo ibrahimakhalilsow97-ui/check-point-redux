@@ -1,0 +1,156 @@
+
+/* Style général */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f4f5f9;
+    font-family: Arial, sans-serif;
+    color: #252525;
+    min-height: 100vh;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Conteneur principal */
+.todo-container {
+    max-width: 650px;
+    background-color: white;
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.08);
+}
+
+/* Titre */
+h1 {
+    font-size: 26px;
+    font-weight: bold;
+}
+
+/* Barre de progression */
+.progress {
+    height: 10px;
+    background-color: #e9ecef;
+    border-radius: 20px;
+}
+
+.progress-bar {
+    background-color: #ffc107;
+    border-radius: 20px;
+    transition: width 0.3s;
+}
+
+/* Champ de saisie */
+.form-control {
+    padding: 12px;
+}
+
+.form-control:focus {
+    border-color: #ffc107;
+    box-shadow: 0 0 0 0.2rem rgba(255, 193, 7, 0.2);
+}
+
+/* Liste des tâches */
+#task-list {
+    padding-left: 0;
+}
+
+.task-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px;
+    border: 1px solid #e5e5e5;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    background-color: white;
+}
+
+.task-item:focus {
+    outline: 3px solid #0d6efd;
+    outline-offset: 2px;
+}
+
+.task-text {
+    flex: 1;
+    overflow-wrap: anywhere;
+}
+
+.task-item.completed .task-text {
+    text-decoration: line-through;
+    color: #6c757d;
+}
+
+/* Boutons */
+button {
+    cursor: pointer;
+}
+
+/* Thème sombre */
+body.dark-theme {
+    background-color: #181a20;
+    color: #f5f5f5;
+}
+
+.dark-theme .todo-container {
+    background-color: #252832;
+}
+
+.dark-theme .task-item {
+    background-color: #303541;
+    border-color: #454b58;
+    color: white;
+}
+
+.dark-theme .form-control {
+    background-color: #303541;
+    color: white;
+    border-color: #555;
+}
+
+.dark-theme .form-control::placeholder {
+    color: #b8bdc8;
+}
+
+.dark-theme .progress {
+    background-color: #454b58;
+}
+
+.dark-theme .text-muted {
+    color: #c0c5ce !important;
+}
+
+/* Accessibilité clavier */
+button:focus-visible,
+input:focus-visible {
+    outline: 3px solid #0d6efd;
+    outline-offset: 3px;
+}
+
+/* Adaptation aux petits écrans */
+@media (max-width: 480px) {
+    .todo-container {
+        padding: 18px;
+    }
+
+    h1 {
+        font-size: 22px;
+    }
+}
+
+
+/* Couleur du titre en mode sombre */
+.dark-theme h1 {
+    color: #ffffff;
+}
+
+/* Bouton du thème */
+.dark-theme #theme-toggle {
+    color: white;
+    border-color: #adb5bd;
+}
+
+/* Texte des tâches */
+.dark-theme .task-text {
+    color: #ffffff;
+}

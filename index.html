@@ -1,0 +1,121 @@
+
+    <!DOCTYPE html>
+    <html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>Ma To Do List</title>
+
+        <!-- Bootstrap 5 -->
+        <link 
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" 
+            rel="stylesheet"
+        >
+
+        <!-- Notre CSS -->
+        <link rel="stylesheet" href="styles.css">
+    </head>
+
+    <body>
+
+        <main class="container py-5">
+            <div class="todo-container mx-auto">
+
+                <!-- En-tête -->
+                <header class="d-flex justify-content-between align-items-center mb-4">
+                    <h1>Ma To Do List</h1>
+
+                    <button id="theme-toggle" class="btn btn-outline-secondary" 
+                            type="button" aria-label="Activer le thème sombre">
+                        🌙
+                    </button>
+                </header>
+
+                <!-- Statistiques -->
+                <section class="mb-4" aria-label="Progression des tâches">
+
+                    <div class="d-flex justify-content-between">
+                        <span id="total-count">0 tâche</span>
+                        <span id="progress-text">0%</span>
+                    </div>
+
+                    <div class="progress mt-2" 
+                        role="progressbar" 
+                        aria-label="Progression des tâches"
+                        aria-valuemin="0" 
+                        aria-valuemax="100"
+                        aria-valuenow="0"
+                        id="progress-bar-container">
+
+                        <div id="progress-bar" class="progress-bar"></div>
+                    </div>
+
+                </section>
+
+                <!-- Ajouter une tâche -->
+                <form id="task-form" class="input-group mb-4">
+
+                    <input
+                        type="text"
+                        id="task-input"
+                        class="form-control"
+                        placeholder="Quelle est votre prochaine tâche ?"
+                        aria-label="Nouvelle tâche"
+                        maxlength="200"
+                        required
+                    >
+
+                    <button class="btn btn-warning" type="submit">
+                        Ajouter
+                    </button>
+
+                </form>
+
+                <!-- Filtres -->
+                <nav class="d-flex flex-wrap gap-2 mb-3" aria-label="Filtres des tâches">
+
+                    <button class="btn btn-warning filter-btn" data-filter="all">
+                        Toutes <span id="all-count">0</span>
+                    </button>
+
+                    <button class="btn btn-outline-secondary filter-btn" data-filter="active">
+                        Actives <span id="active-count">0</span>
+                    </button>
+
+                    <button class="btn btn-outline-secondary filter-btn" data-filter="completed">
+                        Terminées <span id="completed-count">0</span>
+                    </button>
+
+                </nav>
+
+                <!-- Liste des tâches -->
+                <ul id="task-list" class="list-group mb-3">
+                </ul>
+
+                <!-- Message vide -->
+                <p id="empty-message" class="text-center text-muted">
+                    Aucune tâche pour le moment.
+                </p>
+
+                <!-- Effacer les tâches terminées -->
+                <div class="text-end">
+                    <button id="clear-completed" 
+                            class="btn btn-outline-danger btn-sm"
+                            type="button"
+                            disabled>
+                        Effacer les terminées (0)
+                    </button>
+                </div>
+
+            </div>
+        </main>
+
+        <!-- Notre JavaScript -->
+         <!-- Redux Toolkit -->
+<!-- <script src="https://cdn.jsdelivr.net/npm/@reduxjs/toolkit@2.2.7/dist/redux-toolkit.umd.min.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/@reduxjs/toolkit@1.9.7/dist/redux-toolkit.umd.min.js"></script>    
+    <script src="app.js"></script>
+
+    </body>
+    </html>
